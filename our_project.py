@@ -14,6 +14,7 @@ def dif_func(s, t):
      x2, vx2, y2, vy2) = s
     dxdt1 = vx1
     dvxdt1 = - G * m1 * (x1 - x2) / ((x1 - x2)**2 + (y1 - y2)**2)**1.5
+    G * m1 * (x1 - x3) / ((x1 - x2)**2 + (y1 - y2)**2)**1.5
     dydt1 = vy1
     dvydt1 = G * m1 * (y1 - y2) / ((x1 - x2)**2 + (y1 - y2)**2)**1.5
 
@@ -22,8 +23,14 @@ def dif_func(s, t):
     dydt2 = vy2
     dvydt2 = G * m2 * (y1 - y2) / ((x1 - x2)**2 + (y1 - y2)**2)**1.5
 
+    dxdt3 = vx3
+    dvxdt3 = - G * m3 * (x3 - x2) / ((x1 - x2)**2 + (y1 - y2)**2)**1.5
+    dydt3 = vy2
+    dvydt3 = G * m3 * (y3 - y2) / ((x1 - x2)**2 + (y1 - y2)**2)**1.5
+
     return (dxdt1, dvxdt1, dydt1, dvydt1,
-            dxdt2, dvxdt2, dydt2, dvydt2)
+            dxdt2, dvxdt2, dydt2, dvydt2,
+            dxdt3, dvxdt3, dydt3, dvydt3)
 
 G = 6.67 * 10**(-11)
 m1 = 3 * 10 ** 5
@@ -38,6 +45,12 @@ x20 = 15 * 10 ** 10
 vx20 = 0
 y20 = 0
 vy20 = 1500
+
+m3 = 2 * 10 ** 30
+x30 = 0
+vx30 = 0
+y30 = 0
+vy30 = 0
 
 s0 = (x10, vx10, y10, vy10,
      x20, vx20, y20, vy20)
@@ -68,4 +81,4 @@ edge = 2 * x10
 ax.set_xlim(-edge, edge)
 ax.set_ylim(-edge, edge)
  
-ani.save('version_1.gif')
+ani.save('hernya_1.gif')
