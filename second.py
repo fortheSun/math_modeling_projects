@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
 seconds_in_year = 365 * 24 * 60 * 60
-years = 3
+years = 1
 
 frames = 365
 t = np.linspace(0, years*seconds_in_year, frames)
@@ -160,4 +160,4 @@ edge = 2 * x0_earth
 ax.set_xlim(-edge, edge)
 ax.set_ylim(-edge, edge)
 
-ani.save("second.gif")
+ani.save("blackhole_centre_m25.gif")
