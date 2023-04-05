@@ -139,5 +139,5 @@ edge = 2*x30
 ax.set_xlim(-edge, edge)
 ax.set_ylim(-edge, edge)
 
-ani.save('blackhole_earth.gif')
+ani.save('blackhole_centre_m15.gif')
 
