@@ -3,10 +3,10 @@ from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
  
-# Определяем переменную величину
-frames = 365
 seconds_in_year = 365 * 24 * 60 * 60
 years = 1
+
+frames = 365
 t = np.linspace(0, years*seconds_in_year, frames)
 
 
@@ -43,9 +43,7 @@ def move_func(s, t):
             dxdt4, dv_xdt4, dydt4, dv_ydt4)
 
 G = 6.67 * 10**(-11)
-m = 15*10**29
-a = 1.27114 * 149 *10**9
-V_q = (G * m * (2/(20.929*10**9) - 1/(190*10**9)))**0.5
+m = 15 *1 0**29
 
 x10 = 149 * 10**9
 v_x10 = 0
@@ -66,11 +64,6 @@ x40 = -0.7 * 149 * 10**9
 v_x40 =  0
 y40 = 0
 v_y40 = -35020
-
-x50 = 190*10**9
-v_x50 = 0
-y50 = 0
-v_y50 = V_q
 
 s0 = (x10, v_x10, y10, v_y10,
       x20, v_x20, y20, v_y20, 
