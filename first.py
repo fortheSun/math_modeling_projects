@@ -128,7 +128,7 @@ ani = FuncAnimation(fig,
                     interval=30)
 
 plt.axis('equal')
-edge = 2*x30
+edge = 2 * x30
 ax.set_xlim(-edge, edge)
 ax.set_ylim(-edge, edge)
 

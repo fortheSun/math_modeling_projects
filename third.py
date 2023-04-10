@@ -41,9 +41,10 @@ def move_func(s, t):
             dxdt3, dv_xdt3, dydt3, dv_ydt3,
             dxdt4, dv_xdt4, dydt4, dv_ydt4)
 
+
 G = 6.67 * 10**(-11)
 
-m_hole = 25 * 10 ** 29
+m_hole = 30 * 10 ** 29
 
 x0_earth = 149 * 10**9
 v_x0_earth = 0
@@ -62,13 +63,8 @@ v_y0_venus = -35020
 
 x0_mars = 0
 v_x0_mars = -24077
-y0_mars = 1.523662 * 149 * 10**9
+y0_mars = 1.523662 * 149 * 10 ** 9
 v_y0_mars = 0
-
-x0_hole = -1.5 * 149 * 10 ** 9
-v_x0_hole = 0
-y0_hole = 0
-v_y0_hole = 0
 
 s0 = (x0_earth, v_x0_earth, y0_earth, v_y0_earth,
       x0_mercury, v_x0_mercury, y0_mercury, v_y0_mercury,
@@ -76,6 +72,7 @@ s0 = (x0_earth, v_x0_earth, y0_earth, v_y0_earth,
       x0_mars, v_x0_mars, y0_mars, v_y0_mars)
 
 sol = odeint(move_func, s0, t)
+
 
 # Решаем систему диф. уравнений
 def solve_func(i, key):
@@ -97,7 +94,6 @@ def solve_func(i, key):
         y3 = sol[:i, 10]
         x4 = sol[:i, 12]
         y4 = sol[:i, 14]
-
     return ((x1, y1), (x2, y2), (x3, y3), (x4, y4))
 
 
@@ -116,7 +112,8 @@ ball_line3, = plt.plot([], [], '-', color='darksalmon')
 ball4, = plt.plot([], [], 'o', color='lightcoral')
 ball_line4, = plt.plot([], [], '-', color='lightcoral')
 
-plt.plot([0], [0], 'o', color='black', ms=20)
+plt.plot([0], 'o', color='black', ms=20)
+
 
 def animate(i):
     ball1.set_data(solve_func(i, 'point')[0])
@@ -143,4 +140,4 @@ edge = 2 * x0_earth
 ax.set_xlim(-edge, edge)
 ax.set_ylim(-edge, edge)
 
-ani.save("blackhole_centre_m25.gif")
+ani.save("blackhole_m30.gif")
