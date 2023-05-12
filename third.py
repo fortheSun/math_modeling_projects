@@ -41,7 +41,6 @@ def move_func(s, t):
             dxdt3, dv_xdt3, dydt3, dv_ydt3,
             dxdt4, dv_xdt4, dydt4, dv_ydt4)
 
-
 G = 6.67 * 10**(-11)
 
 m_hole = 30 * 10 ** 29
@@ -139,5 +138,7 @@ plt.axis('equal')
 edge = 2 * x0_earth
 ax.set_xlim(-edge, edge)
 ax.set_ylim(-edge, edge)
+
+ani.save("blackhole_m30.gif")
 
 ani.save("blackhole_m30.gif")
