@@ -137,7 +137,7 @@ line3 = ax.plot([], [], [], '-', color='darksalmon')[0]
 ball4 = ax.plot([], [], [], 'o', color='lightcoral')[0]
 line4 = ax.plot([], [], [], '-', color='lightcoral')[0]
 
-ax.scatter([0], [0], [0], color='darkslateblue', s=250)
+ax.scatter([0], [0], [0], color='darkslateblue', s=200)
 
 
 # Функция подстановки координат в анимируемые объекты
@@ -171,7 +171,7 @@ def animate(i):
 
 
 # Украшательсвта и масштабирование
-edge = 1.3 * x0_earth
+edge = 1 * x0_earth
 ax.set_xlim3d([-edge, edge])
 # ax.set_xlabel('X')
 
@@ -181,7 +181,6 @@ ax.set_ylim3d([-edge, edge])
 ax.set_zlim3d([-edge, edge])
 # ax.set_zlabel('Z')
 
-ax.grid()
 # ax = Axes3D(fig)
 ax.xaxis.set_pane_color('black')
 ax.yaxis.set_pane_color('black')
@@ -194,4 +193,4 @@ ax.set_facecolor('black')
 # Анимирование
 ani = FuncAnimation(fig, animate, frames=frames, interval=50)
 
-ani.save('3D_motion.gif')
+ani.save('3D_motion_test3.gif')
