@@ -56,7 +56,7 @@ def move_func(s, t):
 
 G = 6.67 * 10**(-11)
 
-m_hole = 25 * 10**29
+m_hole = 30 * 10**29
 # m_hole = 2 * 10**30
 
 x0_earth = 149 * 10**9
@@ -193,4 +193,4 @@ ax.set_facecolor('black')
 # Анимирование
 ani = FuncAnimation(fig, animate, frames=frames, interval=50)
 
-ani.save('3D_motion_test3.gif')
+ani.save('blackhole_m30.gif')
